@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Contact() {
   return (
     <section className="bg-white px-6 py-10">
-      <div className="max-w-7xl mx-auto flex flex-row items-center justify-center gap-30">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-5 md:gap-30">
         <div className="flex flex-row items-start justify-center gap-5">
           <div className="flex flex-row items-center justify-center gap-5">
             <Image
@@ -17,7 +17,7 @@ export default function Contact() {
             />
           </div>
           <div className="font-bold">
-            <p className="text-2xl text-[#b53639]">
+            <p className="text-lg md:text-2xl text-[#b53639]">
               501 Broadway Blvd SE
             </p>
           </div>
@@ -35,12 +35,12 @@ export default function Contact() {
             />
           </div>
           <div className="font-bold">
-            <p className="text-2xl text-[#b53639]">(662) 0000 000</p>
+            <p className="text-lg md:text-2xl text-[#b53639]">(662) 0000 000</p>
           </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto flex flex-row items-center justify-center gap-30 mt-10">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-10 md:gap-30 mt-10">
         <div className="flex flex-row items-start justify-center gap-5">
           <div className="flex flex-row items-center justify-center gap-5">
             <Image
@@ -54,7 +54,7 @@ export default function Contact() {
             />
           </div>
           <div className="font-bold">
-            <p className="text-2xl text-[#b53639]">hola@email.com</p>
+            <p className="text-lg md:text-2xl text-[#b53639]">hola@email.com</p>
           </div>
         </div>
         <div className="flex flex-row items-start justify-center gap-5">
@@ -88,7 +88,7 @@ export default function Contact() {
             />
           </div>
           <div className="font-bold">
-            <p className="text-2xl text-[#b53639]">Social Media</p>
+            <p className="text-2xl text-[#b53639] hidden md:block">Social Media</p>
           </div>
         </div>
       </div>

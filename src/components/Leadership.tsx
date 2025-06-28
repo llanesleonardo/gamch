@@ -4,10 +4,10 @@ export default function Leadership() {
   return (
     <section className="py-15  bg-[#b53639]" id="leadership">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-white text-5xl text-center font-semibold mb-4">
+        <h2 className="text-white text-3xl md:text-5xl text-center font-semibold mb-4">
           Leadership Team
         </h2>
-        <div className="flex flex-row justify-evenly items-center gap-20 border-b-4 border-white pb-8 mb-8">
+        <div className="flex flex-row justify-evenly items-center gap-20 border-b-1 md:border-b-4 border-white pb-8 mb-8 ">
           <div>
             <Image
               src={
@@ -20,8 +20,8 @@ export default function Leadership() {
             />
           </div>
           <div className="text-white">
-            <h3 className="text-3xl">Verónica Arvizu</h3>
-            <p className="text-xl mb-4">
+            <h3 className="text-xl md:text-3xl">Verónica Arvizu</h3>
+            <p className="text-lg md:text-xl mb-4">
               Grupo A  Edades 3-6 años
             </p>
             <div className="flex flex-row justify-start items-center gap-10">
@@ -33,7 +33,7 @@ export default function Leadership() {
                   width={40}
                   height={20}
                 />
-                <p>Email</p>
+                <p className="hidden md:block">Email</p>
               </div>
               <div className="flex flex-row justify-evenly items-center gap-10">
                 <Image
@@ -43,15 +43,15 @@ export default function Leadership() {
                   width={40}
                   height={20}
                 />
-                <p>LinkedIn</p>
+                <p className="hidden md:block">LinkedIn</p>
               </div>
             </div>
           </div>
         </div>
-        <div className="flex flex-row justify-evenly items-center gap-20 border-b-4 border-white pb-8 mb-8">
+        <div className="flex flex-row justify-evenly items-center gap-20  border-b-1 md:border-b-4 border-white pb-8 mb-8">
           <div className="text-white">
-            <h3 className="text-3xl text-right">Jackie Arvizu</h3>
-            <p className="text-xl mb-4 text-right">
+            <h3 className="text-xl md:text-3xl text-right">Jackie Arvizu</h3>
+            <p className="text-lg md:text-xl mb-4 text-right">
               Grupo B  edades 7-12 años
             </p>
             <div className="flex flex-row justify-end items-center gap-10">
@@ -63,7 +63,7 @@ export default function Leadership() {
                   width={40}
                   height={20}
                 />
-                <p>Email</p>
+                <p className="hidden md:block">Email</p>
               </div>
               <div className="flex flex-row justify-evenly items-center gap-10">
                 <Image
@@ -73,7 +73,7 @@ export default function Leadership() {
                   width={40}
                   height={20}
                 />
-                <p>LinkedIn</p>
+                <p className="hidden md:block">LinkedIn</p>
               </div>
             </div>
           </div>
@@ -102,8 +102,8 @@ export default function Leadership() {
             />
           </div>
           <div className="text-white">
-            <h3 className="text-3xl">Mariano Almada</h3>
-            <p className="text-xl mb-4">
+            <h3 className="text-xl md:text-3xl">Mariano Almada</h3>
+            <p className="text-lg md:text-xl mb-4">
              Grupo C  edades 13-17
             </p>
             <div className="flex flex-row justify-start items-center gap-10">
@@ -115,7 +115,7 @@ export default function Leadership() {
                   width={40}
                   height={20}
                 />
-                <p>Nombre y apellido</p>
+               <p className="hidden md:block">Email</p>
               </div>
               <div className="flex flex-row justify-evenly items-center gap-10">
                 <Image
@@ -125,7 +125,7 @@ export default function Leadership() {
                   width={40}
                   height={20}
                 />
-                <p>Nombre y apellido</p>
+               <p className="hidden md:block">LinkedIn</p>
               </div>
             </div>
           </div>

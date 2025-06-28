@@ -3,10 +3,10 @@ import Image from "next/image";
 export default function Contact() {
   return (
     <section className="bg-white px-6 py-10" id="contact">
-      <div className="max-w-8xl mx-auto flex flex-row items-start justify-evenly gap-10">
+      <div className="max-w-8xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-evenly gap-10">
         <div className="flex flex-col items-start justify-center gap-10">
-          <h3 className="text-5xl text-[#b53639] font-bold ">Lorem ipsum</h3>
-          <p className="text-[#b53639] text-2xl font-bold ">
+          <h3 className="text-3xl md:text-5xl text-[#b53639] font-bold text-center md:text-left">Lorem ipsum</h3>
+          <p className="text-[#b53639] text-lg md:text-2xl font-bold ">
             Lorem ipsum dolor sit amet,
             <br />
             consectetuer adipiscing
@@ -26,7 +26,7 @@ export default function Contact() {
               />
             </div>
             <div className="font-bold">
-              <p className="text-2xl text-[#b53639]">(662) 0000 000</p>
+              <p className="text-lg md:text-2xl text-[#b53639]">(662) 0000 000</p>
             </div>
           </div>
           <div className="flex flex-row items-start justify-center gap-5">
@@ -42,7 +42,7 @@ export default function Contact() {
               />
             </div>
             <div className="font-bold">
-              <p className="text-2xl text-[#b53639]">(662) 0000 000</p>
+              <p className="text-lg md:text-2xl text-[#b53639]">(662) 0000 000</p>
             </div>
           </div>
           <div className="flex flex-row items-start justify-center gap-5">
@@ -58,7 +58,7 @@ export default function Contact() {
               />
             </div>
             <div className="font-bold">
-              <p className="text-2xl text-[#b53639]">hola@email.com</p>
+              <p className="text-lg md:text-2xl text-[#b53639]">hola@email.com</p>
             </div>
           </div>
         </div>
@@ -72,7 +72,7 @@ export default function Contact() {
         <hr className=" my-10 border border-[#b53639]" />
       </div>
 
-      <div className="max-w-7xl mx-auto flex flex-row items-center justify-between">
+      <div className="max-w-7xl mx-auto flex flex-row items-center justify-center md:justify-between">
         <div className="flex flex-row items-start justify-center gap-5">
           <div className="flex flex-row items-center justify-center gap-5">
             <Image
@@ -104,10 +104,10 @@ export default function Contact() {
             />
           </div>
           <div className="font-bold">
-            <p className="text-2xl">Social Media</p>
+            <p className="text-2xl hidden md:block">Social Media</p>
           </div>
         </div>
-        <div className="flex flex-row items-start justify-center gap-5">
+        <div className="flex flex-row items-start justify-center gap-5 hidden md:block">
           <Image
             src={
               "https://gamch.blob.core.windows.net/gamch/ebf2a5f2-bca3-11ef-bf00-0a58a9feac03.png"

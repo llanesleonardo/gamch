@@ -45,8 +45,8 @@ export default function CarouselReviews() {
   const next = () => setCurrentIndex((prev) => Math.min(prev + 1, maxIndex));
 
   return (
-    <div className="relative w-full  mx-4 ">
-      <div className="absolute left-[-70px] top-1/2 -translate-y-1/2 z-10">
+    <div className="relative   mx-1 md:mx-4 ">
+      <div className="absolute left-[70px] top-[-40px] -translate-y-1/2 z-10 block md:hidden">
         <button
           onClick={prev}
           className="ext-[#b53639] text-4xl p-2 cursor-pointer"
@@ -55,17 +55,33 @@ export default function CarouselReviews() {
             src={
               "https://gamch.blob.core.windows.net/gamch/iconos/Landing - VBS-07.png"
             }
-            className="h-13"
+            className=""
             alt="Logo"
              width={50} 
             height={40}
           />
         </button>
       </div>
-      <div className="absolute right-[-70px] top-1/2 -translate-y-1/2 z-10 ">
+      <div className="absolute left-[-10px] top-1/2 -translate-y-1/2 z-10 ">
+        <button
+          onClick={prev}
+          className="ext-[#b53639] text-4xl p-2 cursor-pointer hidden md:block"
+        >
+          <Image
+            src={
+              "https://gamch.blob.core.windows.net/gamch/iconos/Landing - VBS-07.png"
+            }
+            className=""
+            alt="Logo"
+             width={50} 
+            height={40}
+          />
+        </button>
+      </div>
+      <div className="absolute right-[-10px] top-1/2 -translate-y-1/2 z-10 ">
         <button
           onClick={next}
-          className="text-[#b53639] text-4xl p-2 cursor-pointer "
+          className="text-[#b53639] text-4xl p-2 cursor-pointer hidden md:block"
         >
           <Image
                        width={50} 
@@ -74,7 +90,24 @@ export default function CarouselReviews() {
             src={
               "https://gamch.blob.core.windows.net/gamch/iconos/Landing - VBS-08.png"
             }
-            className="h-13"
+            className=""
+          />
+        </button>
+      </div>
+
+            <div className="absolute right-[70px] top-[-40px] -translate-y-1/2 z-10 block md:hidden">
+        <button
+          onClick={next}
+          className="text-[#b53639] text-4xl p-2 cursor-pointer"
+        >
+          <Image
+                       width={50} 
+            height={40}
+            alt="Logo" 
+            src={
+              "https://gamch.blob.core.windows.net/gamch/iconos/Landing - VBS-08.png"
+            }
+            className=""
           />
         </button>
       </div>
@@ -87,9 +120,9 @@ export default function CarouselReviews() {
           {cards.map((card, index) => (
             <div
               key={index}
-              className="flex-none w-[500px] shrink-0 rounded-xl overflow-hidden bg-white shadow-lg"
+              className="flex-none w-[300px] md:w-[500px] shrink-0 rounded-xl overflow-hidden bg-white shadow-lg"
             >
-              <div className="relative h-[300px]">
+              <div className="relative h-auto md:h-[300px]">
                 {/* Background image */}
                 <div className="flex flex-row items-center justify-start gap-5 pl-10">
                   <Image

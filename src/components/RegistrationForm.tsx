@@ -124,16 +124,16 @@ export default function RegistroForm() {
         </div>
 
         {/* Message and Submit */}
-        <div className="space-y-4">
+        <div className="space-y-4 text-center md:text-left">
           <button
             type="submit"
-            className="text-white bg-[#b53639] px-6 py-2 rounded font-bold"
+            className="text-white bg-[#b53639] px-20 md:px-6 py-2 rounded font-bold "
           >
             Enviar mensaje
           </button>
         </div>
       </form>
-      <div className="flex flex-row justify-center items-center mt-20 gap-20">
+      <div className="flex flex-col md:flex-row justify-center items-center mt-20 gap-5 md:gap-20">
         <div className="flex flex-row items-start justify-center gap-5">
           <div>
             <Image
@@ -147,7 +147,7 @@ export default function RegistroForm() {
             />
           </div>
           <div className="font-bold">
-            <p className="text-2xl">(662) 0000 000</p>
+            <p className="textl-lg md:text-2xl">(662) 0000 000</p>
           </div>
         </div>
         <div className="flex flex-row items-start justify-center gap-5">
@@ -163,7 +163,7 @@ export default function RegistroForm() {
             />
           </div>
           <div className="font-bold">
-            <p className="text-2xl">hola@email.com</p>
+            <p className="textl-lg md:text-2xl">hola@email.com</p>
           </div>
         </div>
         <div className="flex flex-row items-start justify-center gap-5">
@@ -197,7 +197,7 @@ export default function RegistroForm() {
             />
           </div>
           <div className="font-bold">
-            <p className="text-2xl">Social Media</p>
+            <p className="text-2xl hidden md:block">Social Media</p>
           </div>
         </div>
       </div>

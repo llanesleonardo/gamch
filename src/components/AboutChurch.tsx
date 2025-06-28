@@ -16,7 +16,7 @@ export default function AboutChurch() {
           />
         </div>
         <div className="flex flex-row items-center justify-center gap-5">
-          <h3 className="text-5xl text-[#b53639] font-bold">En Salvation Army</h3>
+          <h3 className="text-3xl md:text-5xl text-[#b53639] font-bold">En Salvation Army</h3>
         </div>
         <div className="flex flex-row items-start justify-center gap-5">
         <section className="bg-white text-[#b53639] px-6 py-12 max-w-4xl mx-auto text-center">
@@ -42,7 +42,7 @@ export default function AboutChurch() {
       className="inline-flex items-center gap-2 bg-green-600 text-white font-medium px-10 py-5 rounded-lg shadow hover:bg-green-700 transition"
     >
       <FaWhatsapp className="w-10 h-10" />
-      ¡Da click aquí! Te vemos dentro 🙌
+      ¡Da click aquí!
     </a>
 </section>
 
