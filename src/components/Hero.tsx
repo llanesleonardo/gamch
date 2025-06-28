@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="bg-white relative">
+    <section className="bg-white relative md:mt-20" id="home">
       <Image  
       src={"https://gamch.blob.core.windows.net/gamch/Img/Landing - VBS-15-LR-BGW.png"} 
       alt="VBS Banner" 

@@ -18,7 +18,7 @@ export default function Contact() {
           </div>
           <div className="font-bold">
             <p className="text-2xl text-[#b53639]">
-              Lorem ipsum dolor sit amet, consectetuer
+              501 Broadway Blvd SE
             </p>
           </div>
         </div>

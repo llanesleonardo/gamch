@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Contact() {
   return (
-    <section className="bg-white px-6 py-10">
+    <section className="bg-white px-6 py-10" id="contact">
       <div className="max-w-8xl mx-auto flex flex-row items-start justify-evenly gap-10">
         <div className="flex flex-col items-start justify-center gap-10">
           <h3 className="text-5xl text-[#b53639] font-bold ">Lorem ipsum</h3>

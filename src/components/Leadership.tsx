@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Leadership() {
   return (
-    <section className="py-15  bg-[#b53639]">
+    <section className="py-15  bg-[#b53639]" id="leadership">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-white text-5xl text-center font-semibold mb-4">
           Leadership Team
@@ -14,18 +14,15 @@ export default function Leadership() {
                 "https://gamch.blob.core.windows.net/gamch/Img/Landing - VBS-20.png"
               }
               alt="Leadership Member 1"
-              className="w-[400px] rounded-full mx-auto mb-4"
-                  width={400}
+              className="rounded-full mx-auto mb-4"
+                  width={200}
                   height={200}
             />
           </div>
           <div className="text-white">
-            <h3 className="text-3xl">Lorem ipsum</h3>
-            <p className="text-lg mb-4">
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-              nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-              erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci
-              tation ullamcor
+            <h3 className="text-3xl">Verónica Arvizu</h3>
+            <p className="text-xl mb-4">
+              Grupo A  Edades 3-6 años
             </p>
             <div className="flex flex-row justify-start items-center gap-10">
               <div className="flex flex-row justify-evenly items-center gap-10">
@@ -36,7 +33,7 @@ export default function Leadership() {
                   width={40}
                   height={20}
                 />
-                <p>Nombre y apellido</p>
+                <p>Email</p>
               </div>
               <div className="flex flex-row justify-evenly items-center gap-10">
                 <Image
@@ -46,19 +43,16 @@ export default function Leadership() {
                   width={40}
                   height={20}
                 />
-                <p>Nombre y apellido</p>
+                <p>LinkedIn</p>
               </div>
             </div>
           </div>
         </div>
         <div className="flex flex-row justify-evenly items-center gap-20 border-b-4 border-white pb-8 mb-8">
           <div className="text-white">
-            <h3 className="text-3xl text-right">Lorem ipsum</h3>
-            <p className="text-lg mb-4 text-right">
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-              nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-              erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci
-              tation ullamcor
+            <h3 className="text-3xl text-right">Jackie Arvizu</h3>
+            <p className="text-xl mb-4 text-right">
+              Grupo B  edades 7-12 años
             </p>
             <div className="flex flex-row justify-end items-center gap-10">
               <div className="flex flex-row justify-evenly items-center gap-10">
@@ -69,7 +63,7 @@ export default function Leadership() {
                   width={40}
                   height={20}
                 />
-                <p>Nombre y apellido</p>
+                <p>Email</p>
               </div>
               <div className="flex flex-row justify-evenly items-center gap-10">
                 <Image
@@ -79,7 +73,7 @@ export default function Leadership() {
                   width={40}
                   height={20}
                 />
-                <p>Nombre y apellido</p>
+                <p>LinkedIn</p>
               </div>
             </div>
           </div>
@@ -89,8 +83,8 @@ export default function Leadership() {
                 "https://gamch.blob.core.windows.net/gamch/Img/Landing - VBS-20.png"
               }
               alt="Leadership Member 1"
-              className="w-[400px] rounded-full mx-auto mb-4"
-                  width={400}
+              className="rounded-full mx-auto mb-4"
+                  width={200}
                   height={200}
             />
           </div>
@@ -102,18 +96,15 @@ export default function Leadership() {
                 "https://gamch.blob.core.windows.net/gamch/Img/Landing - VBS-20.png"
               }
               alt="Leadership Member 1"
-              className="w-[400px] rounded-full mx-auto mb-4"
-                  width={50}
-                  height={50}
+              className="rounded-full mx-auto mb-4"
+                  width={200}
+                  height={200}
             />
           </div>
           <div className="text-white">
-            <h3 className="text-3xl">Lorem ipsum</h3>
-            <p className="text-lg mb-4">
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-              nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-              erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci
-              tation ullamcor
+            <h3 className="text-3xl">Mariano Almada</h3>
+            <p className="text-xl mb-4">
+             Grupo C  edades 13-17
             </p>
             <div className="flex flex-row justify-start items-center gap-10">
               <div className="flex flex-row justify-evenly items-center gap-10">

@@ -32,7 +32,7 @@ export default function RegistroForm() {
   };
 
   return (
-    <section className="bg-[#fffbf3] px-6 py-10">
+    <section className="bg-[#fffbf3] px-6 py-10" id="registration">
       <h2 className="text-2xl font-semibold mb-6 text-center">Registro</h2>
 
       <form onSubmit={handleSubmit} className="max-w-5xl mx-auto space-y-8">

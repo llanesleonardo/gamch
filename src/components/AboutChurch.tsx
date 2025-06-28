@@ -1,9 +1,10 @@
 import React from "react";
 import Image from 'next/image';
+import { FaWhatsapp } from 'react-icons/fa';
 
 export default function AboutChurch() {
   return (
-    <section className="bg-white px-6 py-10">
+    <section className="bg-white px-6 py-10" id='aboutus'>
       <div className="bg-white max-w-7xl mx-auto  px-6 py-10 flex flex-col items-center justify-center gap-10">
         <div className="flex flex-row items-start justify-center gap-5">
           <Image
@@ -15,18 +16,36 @@ export default function AboutChurch() {
           />
         </div>
         <div className="flex flex-row items-center justify-center gap-5">
-          <h3 className="text-5xl text-[#b53639] font-bold">Sobre la inglesia</h3>
+          <h3 className="text-5xl text-[#b53639] font-bold">En Salvation Army</h3>
         </div>
         <div className="flex flex-row items-start justify-center gap-5">
-          <p className="text-center font-bold text-[#b53639] text-xl">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-            no- nummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-            erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci
-            tation ullamcor Lorem ipsum dolor sit amet, consectetuer adipiscing
-            elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-            magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
-            nostrud exerci tation ullamcor
-          </p>
+        <section className="bg-white text-[#b53639] px-6 py-12 max-w-4xl mx-auto text-center">
+  <p className="mb-4 text-xl">
+    Queremos el bienestar de nuestra comunidad. Trabajamos y extendemos la mano a través de diferentes actividades, todo sin fines de lucro.
+  </p>
+  <p className="mb-4 text-xl">
+    Nos gusta conocer tu necesidad y ayudarte a mejorar en todas las áreas.
+  </p>
+  <p className="mb-4 text-xl">
+    Somos una iglesia con brazos abiertos para ti y tu familia, y si no tienes una, aquí te sentirás en casa.
+  </p>
+  <p className="mb-4 text-xl font-semibold">
+    Dios tiene mucho para ti.
+  </p>
+  <p className="mb-6 text-xl">
+    Te invitamos a unirte a nuestro WhatsApp para enviarte las notificaciones de cada evento.
+  </p>
+      <a
+      href="https://wa.me/your-number-here"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-2 bg-green-600 text-white font-medium px-10 py-5 rounded-lg shadow hover:bg-green-700 transition"
+    >
+      <FaWhatsapp className="w-10 h-10" />
+      ¡Da click aquí! Te vemos dentro 🙌
+    </a>
+</section>
+
         </div>
       </div>
     </section>

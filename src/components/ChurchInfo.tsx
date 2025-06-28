@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function ChurchInfo() {
   return (
-    <section className="bg-[#b53639] text-white px-20 py-15 ">
+    <section className="bg-[#b53639] text-white px-20 py-15 " id="event">
       <div className="max-w-7xl mx-auto flex flex-row items-center justify-center gap-5">
         <div className="border-r-1 border-white pr-5">
           <Image src={"https://gamch.blob.core.windows.net/gamch/ebf2a5f2-bca3-11ef-bf00-0a58a9feac03.png"} 
