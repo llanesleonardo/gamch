@@ -47,7 +47,7 @@ export default function RegistroForm() {
 
     try {
       const response = await fetch(
-        "https://gamch-d9g9c7adfhhwc6aq.westus2-01.azurewebsites.net/api/mailchimpCreate", // <-- CHANGE THIS URL
+        `https://gamch-d9g9c7adfhhwc6aq.westus2-01.azurewebsites.net/api/mailchimpCreate`, // <-- CHANGE THIS URL
         {
           method: "POST",
           headers: {
