@@ -1,7 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from 'react';
 import Image from "next/image";
+import '@/i18n'; // or '../i18n' depending on your file structure
+import { useTranslation } from 'react-i18next';
 
 type ApiResponse = {
   message?: string;
@@ -9,6 +11,8 @@ type ApiResponse = {
 };
 
 export default function RegistroForm() {
+  
+
   const [children, setChildren] = useState([{ name: "", age: "" }]);
   const [parentInfo, setParentInfo] = useState({
     name: "",
@@ -21,6 +25,20 @@ export default function RegistroForm() {
   const [loading, setLoading] = useState(false);
   const [apiResponse, setApiResponse] = useState<ApiResponse | null>(null);
   const [validationError, setValidationError] = useState<string | null>(null);
+
+       const { i18n, ready } = useTranslation();
+        const [isReady, setIsReady] = useState(false);
+      
+        useEffect(() => {
+          if (ready) {
+            setIsReady(true);
+          }
+        }, [ready]);
+      
+        if (!isReady) {
+          return <div>Loading...</div>;
+        }
+  
 
   // Helper for email validation
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -131,7 +149,7 @@ export default function RegistroForm() {
 
   return (
     <section className="bg-[#fffbf3] px-6 py-10" id="registration">
-      <h2 className="text-2xl font-semibold mb-6 text-center">Registro</h2>
+      <h2 className="text-2xl font-semibold mb-6 text-center">{i18n.t('Registration')}</h2>
 
       {/* Validation error display */}
       {validationError && (
@@ -143,7 +161,7 @@ export default function RegistroForm() {
       {/* Show loader if loading, otherwise show form */}
       {loading ? (
         <div className="flex justify-center items-center py-10">
-          <span className="text-lg font-semibold">Enviando la información...</span>
+          <span className="text-lg font-semibold">{i18n.t('Sending information')}...</span>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="max-w-5xl mx-auto space-y-8">
@@ -151,7 +169,7 @@ export default function RegistroForm() {
             {/* Parent Info */}
             <div className="flex-1 space-y-4">
               <h3 className="text-xl font-semibold">
-                Información del Padre o Madre
+                {i18n.t('Father or Mother Information')}
               </h3>
               <input
                 className="border p-2 rounded w-full text-white bg-[#b53639]"
@@ -162,7 +180,7 @@ export default function RegistroForm() {
               />
               <input
                 className="border p-2 rounded w-full text-white bg-[#b53639]"
-                placeholder="Correo"
+                placeholder={i18n.t('Email')}
                 type="email"
                 value={parentInfo.email}
                 onChange={(e) => handleParentChange("email", e.target.value)}
@@ -170,21 +188,21 @@ export default function RegistroForm() {
               />
               <input
                 className="border p-2 rounded w-full text-white bg-[#b53639]"
-                placeholder="Teléfono"
+                placeholder={i18n.t('Phone number')}
                 value={parentInfo.phone}
                 onChange={(e) => handleParentChange("phone", e.target.value)}
                 required
               />
               <input
                 className="border p-2 rounded w-full text-white bg-[#b53639]"
-                placeholder="Dirección"
+                placeholder={i18n.t('Address')}
                 value={parentInfo.address}
                 onChange={(e) => handleParentChange("address", e.target.value)}
                 required
               />
               <textarea
                 className="border p-2 rounded w-full text-white bg-[#b53639]"
-                placeholder="Mensaje"
+                placeholder={i18n.t('Message')}
                 rows={3}
                 value={parentInfo.message}
                 onChange={(e) => handleParentChange("message", e.target.value)}
@@ -194,7 +212,7 @@ export default function RegistroForm() {
             {/* Children Info */}
             <div className="flex-1 space-y-4">
               <h3 className="text-xl font-semibold">
-                Información del Niño o Niños
+                {i18n.t('Child/Children Information')}
               </h3>
               {children.map((child, index) => (
                 <div key={index} className="rounded relative">
@@ -202,7 +220,7 @@ export default function RegistroForm() {
                     <div className="w-full space-y-2">
                       <input
                         className="border p-2 rounded w-full text-white bg-[#b53639]"
-                        placeholder={`Nombre del niño ${index + 1}`}
+                        placeholder={i18n.t('childNamePlaceholder', { num: index + 1 })}
                         value={child.name}
                         onChange={(e) =>
                           handleChildChange(index, "name", e.target.value)
@@ -211,8 +229,7 @@ export default function RegistroForm() {
                       />
                       <input
                         className="border p-2 rounded w-full text-white bg-[#b53639]"
-                        placeholder={`Edad del niño ${index + 1}`}
-                        value={child.age}
+                        placeholder={i18n.t('childAgePlaceholder', { num: index + 1 })}                        value={child.age}
                         onChange={(e) =>
                           handleChildChange(index, "age", e.target.value)
                         }
@@ -224,7 +241,7 @@ export default function RegistroForm() {
                         type="button"
                         onClick={() => handleRemoveChild(index)}
                         className="text-red-600 hover:text-red-800 text-lg font-bold"
-                        title="Eliminar este niño"
+                        title="Remove child"
                       >
                         ❌
                       </button>
@@ -237,7 +254,7 @@ export default function RegistroForm() {
                 onClick={handleAddChild}
                 className="text-[#b53639] underline font-medium hover:underline"
               >
-                + Agregar otro niño
+                + {i18n.t('Add child')}
               </button>
             </div>
           </div>
@@ -248,7 +265,7 @@ export default function RegistroForm() {
               className="text-white bg-[#b53639] px-20 md:px-6 py-2 rounded font-bold"
               disabled={loading}
             >
-              Enviar mensaje
+             {i18n.t('Submit')}
             </button>
           </div>
         </form>

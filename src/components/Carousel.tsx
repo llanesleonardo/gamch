@@ -1,16 +1,18 @@
 'use client';
-
-import { useState } from "react";
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import '@/i18n'; // or '../i18n' depending on your file structure
+import { useTranslation } from 'react-i18next';
+
 
 
 const cards = [
-  { title: "Musica", description: "", image: "https://gamch.blob.core.windows.net/gamch/activities/1.png" },
-  { title: "Nuevos amigos", description: "", image: "https://gamch.blob.core.windows.net/gamch/activities/2.png" },
-  { title: "Juegos", description: "", image: "https://gamch.blob.core.windows.net/gamch/activities/4.png" },
-  { title: "Manualidades", description: "", image: "https://gamch.blob.core.windows.net/gamch/activities/3.png" },
-    { title: "Premios", description: "", image: "https://gamch.blob.core.windows.net/gamch/activities/5.png" },
-      { title: "Regalos", description: "", image: "https://gamch.blob.core.windows.net/gamch/activities/6.png" },
+  { title: "Music", description: "", image: "https://gamch.blob.core.windows.net/gamch/activities/1.png" },
+  { title: "New Friends", description: "", image: "https://gamch.blob.core.windows.net/gamch/activities/2.png" },
+  { title: "Games", description: "", image: "https://gamch.blob.core.windows.net/gamch/activities/4.png" },
+  { title: "Crafts", description: "", image: "https://gamch.blob.core.windows.net/gamch/activities/3.png" },
+    { title: "Surprises", description: "", image: "https://gamch.blob.core.windows.net/gamch/activities/5.png" },
+      { title: "Gifts", description: "", image: "https://gamch.blob.core.windows.net/gamch/activities/6.png" },
 ];
 
 const cardWidth = 500;
@@ -24,6 +26,20 @@ export default function Carousel() {
 
   const prev = () => setCurrentIndex((prev) => Math.max(prev - 1, 0));
   const next = () => setCurrentIndex((prev) => Math.min(prev + 1, maxIndex));
+
+
+   const { i18n, ready } = useTranslation();
+    const [isReady, setIsReady] = useState(false);
+  
+    useEffect(() => {
+      if (ready) {
+        setIsReady(true);
+      }
+    }, [ready]);
+  
+    if (!isReady) {
+      return <div>Loading...</div>;
+    }
 
   return (
     <div className="relative  md:mx-4 " >
@@ -98,10 +114,10 @@ export default function Carousel() {
 
                   {/* Foreground content */}
                   <div className="relative z-10">
-                    <h2 className="text-xl md:text-3xl font-bold">{card.title}</h2>
+                    <h2 className="text-xl md:text-3xl font-bold">{i18n.t(card.title)}</h2>
                     <p className="text-lg md:text-2xl px-10">{card.description}</p>
                     <a href="#registration" className="mx-auto mt-2 text-xl md:text-2xl bg-[#b53639] px-4 py-2 rounded-full text-white font-bold hidden md:block">
-                      Contáctanos
+                      { i18n.t('Contact Us')}
                     </a>
                   </div>
                 </div>
