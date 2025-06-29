@@ -173,7 +173,7 @@ export default function RegistroForm() {
               </h3>
               <input
                 className="border p-2 rounded w-full text-white bg-[#b53639]"
-                placeholder="Nombre del padre o madre"
+                placeholder={i18n.t('Father or Mother Name')}
                 value={parentInfo.name}
                 onChange={(e) => handleParentChange("name", e.target.value)}
                 required
