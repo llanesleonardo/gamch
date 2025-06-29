@@ -35,7 +35,7 @@ export default function Contact() {
             />
           </div>
           <div className="font-bold">
-            <p className="text-lg md:text-2xl text-[#b53639]">(662) 0000 000</p>
+            <p className="text-lg md:text-2xl text-[#b53639]">(520)247-2460</p>
           </div>
         </div>
       </div>
@@ -54,12 +54,12 @@ export default function Contact() {
             />
           </div>
           <div className="font-bold">
-            <p className="text-lg md:text-2xl text-[#b53639]">hola@email.com</p>
+            <p className="text-lg md:text-2xl text-[#b53639]">gammy.ruiz@usw.salvationarmy.org</p>
           </div>
         </div>
         <div className="flex flex-row items-start justify-center gap-5">
           <div className="flex flex-row items-center justify-center gap-5">
-            <Image
+            <a href="https://www.facebook.com/SalvationArmyUSA/?locale=es_LA" target="_blank"><Image
               src={
                 "https://gamch.blob.core.windows.net/gamch/iconos/Landing - VBS-12.png"
               }
@@ -67,8 +67,8 @@ export default function Contact() {
               className="mb-4"
               width={40}
               height={20}
-            />
-            <Image
+            /></a>
+            <a href="https://www.instagram.com/salvationarmyus/?hl=es" target="_blank"><Image
               src={
                 "https://gamch.blob.core.windows.net/gamch/iconos/Landing - VBS-13.png"
               }
@@ -76,8 +76,8 @@ export default function Contact() {
               className="mb-4"
               width={40}
               height={20}
-            />
-            <Image
+            /></a>
+           <a href="https://www.linkedin.com/company/salvationarmyus/" target="_blank"> <Image
               src={
                 "https://gamch.blob.core.windows.net/gamch/iconos/Landing - VBS-14.png"
               }
@@ -85,7 +85,7 @@ export default function Contact() {
               className="mb-4"
               width={40}
               height={20}
-            />
+            /></a>
           </div>
           <div className="font-bold">
             <p className="text-2xl text-[#b53639] hidden md:block">Social Media</p>

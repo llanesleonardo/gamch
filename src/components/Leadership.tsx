@@ -26,16 +26,16 @@ export default function Leadership() {
             </p>
             <div className="flex flex-row justify-start items-center gap-10">
               <div className="flex flex-row justify-evenly items-center gap-10">
-                <Image
+               <a href="mailto:gammy.ruiz@usw.salvationarmy.org"> <Image
                   src="https://gamch.blob.core.windows.net/gamch/iconos/Landing - VBS-05.png"
                   alt="Leadership Member 1"
-                  className="mx-auto mb-4"
+                  className="mx-auto "
                   width={40}
                   height={20}
-                />
-                <p className="hidden md:block">Email</p>
+                /> </a>
+                <p className="hidden md:block">gammy.ruiz@usw.salvationarmy.org</p>
               </div>
-              <div className="flex flex-row justify-evenly items-center gap-10">
+            {/*  <div className="flex flex-row justify-evenly items-center gap-10">
                 <Image
                   src="https://gamch.blob.core.windows.net/gamch/iconos/Landing - VBS-04.png"
                   alt="Leadership Member 1"
@@ -44,7 +44,7 @@ export default function Leadership() {
                   height={20}
                 />
                 <p className="hidden md:block">LinkedIn</p>
-              </div>
+              </div>*/}
             </div>
           </div>
         </div>
@@ -56,16 +56,16 @@ export default function Leadership() {
             </p>
             <div className="flex flex-row justify-end items-center gap-10">
               <div className="flex flex-row justify-evenly items-center gap-10">
-                <Image
+               <a href="mailto:gammy.ruiz@usw.salvationarmy.org"> <Image
                   src="https://gamch.blob.core.windows.net/gamch/iconos/Landing - VBS-05.png"
                   alt="Leadership Member 1"
-                  className="mx-auto mb-4"
+                  className="mx-auto "
                   width={40}
                   height={20}
-                />
-                <p className="hidden md:block">Email</p>
+                /> </a>
+                <p className="hidden md:block">gammy.ruiz@usw.salvationarmy.org</p>
               </div>
-              <div className="flex flex-row justify-evenly items-center gap-10">
+            {/*  <div className="flex flex-row justify-evenly items-center gap-10">
                 <Image
                   src="https://gamch.blob.core.windows.net/gamch/iconos/Landing - VBS-04.png"
                   alt="Leadership Member 1"
@@ -74,7 +74,7 @@ export default function Leadership() {
                   height={20}
                 />
                 <p className="hidden md:block">LinkedIn</p>
-              </div>
+              </div>*/}
             </div>
           </div>
           <div>
@@ -108,16 +108,16 @@ export default function Leadership() {
             </p>
             <div className="flex flex-row justify-start items-center gap-10">
               <div className="flex flex-row justify-evenly items-center gap-10">
-                <Image
+               <a href="mailto:gammy.ruiz@usw.salvationarmy.org"> <Image
                   src="https://gamch.blob.core.windows.net/gamch/iconos/Landing - VBS-05.png"
                   alt="Leadership Member 1"
-                  className="mx-auto mb-4"
+                  className="mx-auto "
                   width={40}
                   height={20}
-                />
-               <p className="hidden md:block">Email</p>
+                /> </a>
+               <p className="hidden md:block">gammy.ruiz@usw.salvationarmy.org</p>
               </div>
-              <div className="flex flex-row justify-evenly items-center gap-10">
+            {/*  <div className="flex flex-row justify-evenly items-center gap-10">
                 <Image
                   src="https://gamch.blob.core.windows.net/gamch/iconos/Landing - VBS-04.png"
                   alt="Leadership Member 1"
@@ -125,8 +125,8 @@ export default function Leadership() {
                   width={40}
                   height={20}
                 />
-               <p className="hidden md:block">LinkedIn</p>
-              </div>
+                <p className="hidden md:block">LinkedIn</p>
+              </div>*/}
             </div>
           </div>
         </div>
@@ -138,16 +138,16 @@ export default function Leadership() {
             </p>
             <div className="flex flex-row justify-end items-center gap-10">
               <div className="flex flex-row justify-evenly items-center gap-10">
-                <Image
+               <a href="mailto:gammy.ruiz@usw.salvationarmy.org"> <Image
                   src="https://gamch.blob.core.windows.net/gamch/iconos/Landing - VBS-05.png"
                   alt="Leadership Member 1"
-                  className="mx-auto mb-4"
+                  className="mx-auto"
                   width={40}
                   height={20}
-                />
-                <p className="hidden md:block">Email</p>
+                /> </a>
+                <p className="hidden md:block">gammy.ruiz@usw.salvationarmy.org</p>
               </div>
-              <div className="flex flex-row justify-evenly items-center gap-10">
+            {/*  <div className="flex flex-row justify-evenly items-center gap-10">
                 <Image
                   src="https://gamch.blob.core.windows.net/gamch/iconos/Landing - VBS-04.png"
                   alt="Leadership Member 1"
@@ -156,7 +156,7 @@ export default function Leadership() {
                   height={20}
                 />
                 <p className="hidden md:block">LinkedIn</p>
-              </div>
+              </div>*/}
             </div>
           </div>
           <div>

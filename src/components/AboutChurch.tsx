@@ -36,10 +36,10 @@ export default function AboutChurch() {
     Te invitamos a unirte a nuestro WhatsApp para enviarte las notificaciones de cada evento.
   </p>
       <a
-      href="https://wa.me/your-number-here"
+      href="https://wa.me/17142275173"
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 bg-green-600 text-white font-medium px-10 py-5 rounded-lg shadow hover:bg-green-700 transition"
+      className="inline-flex items-center gap-2 bg-[#b53639] text-white font-medium px-10 py-3 rounded-lg shadow hover:bg-green-700 transition"
     >
       <FaWhatsapp className="w-10 h-10" />
       ¡Da click aquí!
