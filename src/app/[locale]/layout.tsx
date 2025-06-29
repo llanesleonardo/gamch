@@ -54,23 +54,20 @@ export const metadata:Metadata = {
     shortcut: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   },
-  manifest: "/site.webmanifest",
 };
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({locale}));
 }
 
-// ✅ Correctly typed props
-type Props = {
-  children: React.ReactNode;
-  params: {
-    locale: string;
-  };
-};
 
-export default async function Layout({ children, params }: Props) {
-  const { locale } = params;
+
+export default async function Layout({ params,children }: { params: Promise<{ locale: string }> | undefined; children: React.ReactNode }) {
+  if (!params) {
+    // Handle undefined case
+    return <div>No locale provided</div>;
+  }
+  const { locale } = await params;
   
   if (!hasLocale(routing.locales, locale)) {
     notFound();

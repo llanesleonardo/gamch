@@ -1,4 +1,5 @@
-import {use} from 'react';
+'use client';
+//import {use} from 'react';
 import Hero from '@/components/Hero'
 import EventDescription from '@/components/EventDescription'
 import ChurchInfo from '@/components/ChurchInfo'
@@ -13,19 +14,19 @@ import ChurchHero from '@/components/ChurchHero'
 import ContactFooter from '@/components/ContactFooter'
 import Footer from '@/components/Footer'
 import { useTranslations } from 'next-intl';
-import {setRequestLocale} from 'next-intl/server';
-type LocaleParams = {
-  params: {
-    locale: string;
-  };
-};
+//import {setRequestLocale} from 'next-intl/server';
 
-export default function Home({ params }: LocaleParams) {
-  const {locale} = use(params);
-
-  setRequestLocale(locale);
-
+export default function Home({ params }: { params: Promise<{ locale: string }> | undefined }) {
   const t = useTranslations('Home');
+  
+  if (!params) {
+    return <div>No locale provided</div>;
+  }
+
+ // const { locale } = use(params);
+  //setRequestLocale(locale);
+  // Note: You cannot use setRequestLocale here!
+  
 
 
   return (
