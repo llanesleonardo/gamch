@@ -3,6 +3,11 @@
 import { useState } from "react";
 import Image from "next/image";
 
+type ApiResponse = {
+  message?: string;
+  error?: string;
+};
+
 export default function RegistroForm() {
   const [children, setChildren] = useState([{ name: "", age: "" }]);
   const [parentInfo, setParentInfo] = useState({
@@ -15,7 +20,7 @@ export default function RegistroForm() {
 
   // New state for loading and API response
   const [loading, setLoading] = useState(false);
-  const [apiResponse, setApiResponse] = useState(null);
+const [apiResponse, setApiResponse] = useState<ApiResponse | null>(null);
 
   const handleAddChild = () => {
     setChildren([...children, { name: "", age: "" }]);
@@ -229,9 +234,63 @@ export default function RegistroForm() {
       )}
 
       {/* Contact Info */}
-      {/* ... (rest of your contact info code remains unchanged) ... */}
       <div className="flex flex-col md:flex-row justify-center items-center mt-20 gap-5 md:gap-20">
-        {/* ... */}
+        <div className="flex flex-row items-start justify-center gap-5">
+          <Image
+            src="https://gamch.blob.core.windows.net/gamch/iconos/Landing - VBS-10.png"
+            alt="Phone number"
+            width={30}
+            height={20}
+          />
+          <div className="font-bold">
+            <p className="textl-lg md:text-2xl">(714) 227-5173</p>
+          </div>
+        </div>
+        <div className="flex flex-row items-start justify-center gap-5">
+          <Image
+            src="https://gamch.blob.core.windows.net/gamch/iconos/Landing - VBS-11.png"
+            alt="Email"
+            width={40}
+            height={20}
+          />
+          <div className="font-bold">
+            <p className="textl-lg md:text-2xl">gammy.ruiz@usw.salvationarmy.org</p>
+          </div>
+        </div>
+        <div className="flex flex-row items-start justify-center gap-5">
+        <div className="flex flex-row items-center justify-center gap-5">
+                            <a href="https://www.facebook.com/SalvationArmyUSA/?locale=es_LA" target="_blank"><Image
+                              src={
+                                "https://gamch.blob.core.windows.net/gamch/iconos/Landing - VBS-12.png"
+                              }
+                              alt="Email"
+                              className="mb-4"
+                              width={40}
+                              height={20}
+                            /></a>
+                            <a href="https://www.instagram.com/salvationarmyus/?hl=es" target="_blank"><Image
+                              src={
+                                "https://gamch.blob.core.windows.net/gamch/iconos/Landing - VBS-13.png"
+                              }
+                              alt="Email"
+                              className="mb-4"
+                              width={40}
+                              height={20}
+                            /></a>
+                           <a href="https://www.linkedin.com/company/salvationarmyus/" target="_blank"> <Image
+                              src={
+                                "https://gamch.blob.core.windows.net/gamch/iconos/Landing - VBS-14.png"
+                              }
+                              alt="Email"
+                              className="mb-4"
+                              width={40}
+                              height={20}
+                            /></a>
+                          </div>
+          <div className="font-bold">
+            <p className="text-2xl hidden md:block">Social Media</p>
+          </div>
+        </div>
       </div>
     </section>
   );
