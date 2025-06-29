@@ -5,6 +5,13 @@ import Image from "next/image";
 
 export default function RegistroForm() {
   const [children, setChildren] = useState([{ name: "", age: "" }]);
+  const [parentInfo, setParentInfo] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    address: "",
+    message: "",
+  });
 
   const handleAddChild = () => {
     setChildren([...children, { name: "", age: "" }]);
@@ -12,7 +19,7 @@ export default function RegistroForm() {
 
   const handleRemoveChild = (index: number) => {
     const updated = [...children];
-    updated.splice(index, 1); // remove 1 item at index
+    updated.splice(index, 1);
     setChildren(updated);
   };
 
@@ -26,9 +33,37 @@ export default function RegistroForm() {
     setChildren(updated);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleParentChange = (field: string, value: string) => {
+    setParentInfo((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Submitted:", children);
+
+    const payload = {
+      parent: parentInfo,
+      children,
+    };
+
+    try {
+      const response = await fetch(
+        "https://your-azure-func.azurewebsites.net/api/register", // <-- CHANGE THIS URL
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        }
+      );
+
+      const result = await response.json();
+      console.log("Azure Response:", result);
+      alert("Mensaje enviado con éxito ✅");
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Error al enviar el formulario ❌");
+    }
   };
 
   return (
@@ -45,28 +80,38 @@ export default function RegistroForm() {
             <input
               className="border p-2 rounded w-full text-white bg-[#b53639]"
               placeholder="Nombre del padre o madre"
+              value={parentInfo.name}
+              onChange={(e) => handleParentChange("name", e.target.value)}
               required
             />
             <input
               className="border p-2 rounded w-full text-white bg-[#b53639]"
               placeholder="Correo"
               type="email"
+              value={parentInfo.email}
+              onChange={(e) => handleParentChange("email", e.target.value)}
               required
             />
             <input
               className="border p-2 rounded w-full text-white bg-[#b53639]"
               placeholder="Teléfono"
+              value={parentInfo.phone}
+              onChange={(e) => handleParentChange("phone", e.target.value)}
               required
             />
             <input
               className="border p-2 rounded w-full text-white bg-[#b53639]"
               placeholder="Dirección"
+              value={parentInfo.address}
+              onChange={(e) => handleParentChange("address", e.target.value)}
               required
             />
             <textarea
               className="border p-2 rounded w-full text-white bg-[#b53639]"
               placeholder="Mensaje"
               rows={3}
+              value={parentInfo.message}
+              onChange={(e) => handleParentChange("message", e.target.value)}
             />
           </div>
 
@@ -123,78 +168,51 @@ export default function RegistroForm() {
           </div>
         </div>
 
-        {/* Message and Submit */}
         <div className="space-y-4 text-center md:text-left">
           <button
             type="submit"
-            className="text-white bg-[#b53639] px-20 md:px-6 py-2 rounded font-bold "
+            className="text-white bg-[#b53639] px-20 md:px-6 py-2 rounded font-bold"
           >
             Enviar mensaje
           </button>
         </div>
       </form>
+
+      {/* Contact Info */}
       <div className="flex flex-col md:flex-row justify-center items-center mt-20 gap-5 md:gap-20">
         <div className="flex flex-row items-start justify-center gap-5">
-          <div>
-            <Image
-              src={
-                "https://gamch.blob.core.windows.net/gamch/iconos/Landing - VBS-10.png"
-              }
-              alt="Phone number"
-              className="mb-4"
-              width={30}
-              height={20}
-            />
-          </div>
+          <Image
+            src="https://gamch.blob.core.windows.net/gamch/iconos/Landing - VBS-10.png"
+            alt="Phone number"
+            width={30}
+            height={20}
+          />
           <div className="font-bold">
             <p className="textl-lg md:text-2xl">(662) 0000 000</p>
           </div>
         </div>
         <div className="flex flex-row items-start justify-center gap-5">
-          <div className="">
-            <Image
-              src={
-                "https://gamch.blob.core.windows.net/gamch/iconos/Landing - VBS-11.png"
-              }
-              alt="Email"
-              className="mb-4"
-              width={40}
-              height={20}
-            />
-          </div>
+          <Image
+            src="https://gamch.blob.core.windows.net/gamch/iconos/Landing - VBS-11.png"
+            alt="Email"
+            width={40}
+            height={20}
+          />
           <div className="font-bold">
             <p className="textl-lg md:text-2xl">hola@email.com</p>
           </div>
         </div>
         <div className="flex flex-row items-start justify-center gap-5">
           <div className="flex flex-row items-center justify-center gap-5">
-            <Image
-              src={
-                "https://gamch.blob.core.windows.net/gamch/iconos/Landing - VBS-12.png"
-              }
-              alt="Email"
-              className="mb-4"
-              width={40}
-              height={20}
-            />
-            <Image
-              src={
-                "https://gamch.blob.core.windows.net/gamch/iconos/Landing - VBS-13.png"
-              }
-              alt="Email"
-              className="mb-4"
-              width={40}
-              height={20}
-            />
-            <Image
-              src={
-                "https://gamch.blob.core.windows.net/gamch/iconos/Landing - VBS-14.png"
-              }
-              alt="Email"
-              className="mb-4"
-              width={40}
-              height={20}
-            />
+            {["12", "13", "14"].map((n) => (
+              <Image
+                key={n}
+                src={`https://gamch.blob.core.windows.net/gamch/iconos/Landing - VBS-${n}.png`}
+                alt="Social"
+                width={40}
+                height={20}
+              />
+            ))}
           </div>
           <div className="font-bold">
             <p className="text-2xl hidden md:block">Social Media</p>

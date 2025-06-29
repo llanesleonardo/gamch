@@ -7,7 +7,7 @@ import Image from 'next/image';
 export default function MainMenu() {
   return (
     <div className='fixed top-0 left-0 w-full z-50 bg-white shadow-md'>
-      <nav className="bg-[#b53639] text-white px-6 py-1  shadow-md hidden md:block">
+      <nav className="bg-[#b53639] text-white px-6 py-1  shadow-md ">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="text-xl font-bold">
@@ -22,7 +22,7 @@ export default function MainMenu() {
         </div>
 
         {/* Menu Items */}
-        <ul className="flex gap-6  md:text-xl font-normal font-bold ">
+        <ul className="flex gap-6  md:text-xl font-normal font-bold hidden md:block">
           {menuItems.map((item) => (
             <li key={item.href}>
               <Link href={item.href} className="hover:underline">
