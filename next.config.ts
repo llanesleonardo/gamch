@@ -1,9 +1,7 @@
 /** @type {import('next').NextConfig} */
 
 import { NextConfig } from 'next';
-import createNextIntlPlugin from 'next-intl/plugin'; // Import the plugin
 
-const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
   output: 'export',
@@ -17,4 +15,4 @@ const nextConfig: NextConfig = {
   }
 };
 
-export default withNextIntl(nextConfig); // Wrap and export the config
+export default nextConfig; // Wrap and export the config

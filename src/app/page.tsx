@@ -1,5 +1,5 @@
 'use client';
-//import {use} from 'react';
+import { useEffect, useState } from 'react';
 import Hero from '@/components/Hero'
 import EventDescription from '@/components/EventDescription'
 import ChurchInfo from '@/components/ChurchInfo'
@@ -13,27 +13,30 @@ import AboutChurch from '@/components/AboutChurch'
 import ChurchHero from '@/components/ChurchHero'
 import ContactFooter from '@/components/ContactFooter'
 import Footer from '@/components/Footer'
-import { useTranslations } from 'next-intl';
-//import {setRequestLocale} from 'next-intl/server';
+import '@/i18n'; // or '../i18n' depending on your file structure
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from '@/components/LanguagesSwitcher';
 
-export default function Home({ params }: { params: Promise<{ locale: string }> | undefined }) {
-  const t = useTranslations('Home');
-  
-  if (!params) {
-    return <div>No locale provided</div>;
+export default function Home() {
+  const { i18n, ready } = useTranslation();
+  const [isReady, setIsReady] = useState(false);
+
+  useEffect(() => {
+    if (ready) {
+      setIsReady(true);
+    }
+  }, [ready]);
+
+  if (!isReady) {
+    return <div>Loading...</div>;
   }
 
- // const { locale } = use(params);
-  //setRequestLocale(locale);
-  // Note: You cannot use setRequestLocale here!
-  
-
-
+  console.log("languages ---- >",i18n.language," ---->", i18n.languages);
   return (
     <main className="bg-white text-gray-800">
-      
+      <LanguageSwitcher />
       <Hero />
-      <h1>{t('title')}</h1>
+      <h1>{i18n.t('title')}</h1>
       <EventDescription />
       <ChurchInfo />
       <ChurchLocation />

@@ -1,12 +1,10 @@
+import { ReactNode } from 'react';
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "../globals.css";
+import "./globals.css";
 import MainMenu from "@/components/mainMenu";
 import MobileBottomMenu from "@/components/MobileBottomMenu";
-import {setRequestLocale} from 'next-intl/server';
-import { NextIntlClientProvider,hasLocale } from 'next-intl';
-import { notFound } from 'next/navigation';
-import {routing} from '@/i18n/routing';
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -56,36 +54,24 @@ export const metadata:Metadata = {
   },
 };
 
-export function generateStaticParams() {
-  return routing.locales.map((locale) => ({locale}));
-}
 
 
 
-export default async function Layout({ params,children }: { params: Promise<{ locale: string }> | undefined; children: React.ReactNode }) {
-  if (!params) {
-    // Handle undefined case
-    return <div>No locale provided</div>;
-  }
-  const { locale } = await params;
-  
-  if (!hasLocale(routing.locales, locale)) {
-    notFound();
-  }
+export default async function Layout({children}:{children: ReactNode;}) {
 
-   setRequestLocale(locale);
+
 
   return (
-    <html lang={locale}>
+    <html>
       
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-         <NextIntlClientProvider>
+   
       <MainMenu />
         {children}
         <MobileBottomMenu />
-        </NextIntlClientProvider>
+
       </body>
     </html>
   );
