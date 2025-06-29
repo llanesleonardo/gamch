@@ -109,7 +109,7 @@ const [apiResponse, setApiResponse] = useState<ApiResponse | null>(null);
       {/* Show loader if loading, otherwise show form */}
       {loading ? (
         <div className="flex justify-center items-center py-10">
-          <span className="text-lg font-semibold">Cargando...</span>
+          <span className="text-lg font-semibold">Enviando la informacion...</span>
           {/* You can replace with a spinner component if you like */}
         </div>
       ) : (
@@ -224,14 +224,13 @@ const [apiResponse, setApiResponse] = useState<ApiResponse | null>(null);
       )}
 
       {/* Show API response below the form when not loading and response exists */}
-      {!loading && apiResponse && (
-        <div className="max-w-5xl mx-auto mt-8 p-4 bg-white rounded shadow text-black">
-          <h4 className="font-semibold mb-2">Respuesta del servidor:</h4>
-          <pre className="whitespace-pre-wrap break-all">
-            {JSON.stringify(apiResponse, null, 2)}
-          </pre>
-        </div>
-      )}
+    {!loading && apiResponse && (
+      <div className={`max-w-5xl mx-auto mt-8 p-4 rounded shadow text-center font-semibold ${
+        apiResponse.error ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'
+      }`}>
+        {apiResponse.error || apiResponse.message}
+      </div>
+    )}
 
       {/* Contact Info */}
       <div className="flex flex-col md:flex-row justify-center items-center mt-20 gap-5 md:gap-20">
