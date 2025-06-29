@@ -90,7 +90,7 @@ export default function Carousel() {
                 <div className="absolute top-4 left-1/2 transform -translate-x-1/2 bg-teal-200 w-8 h-8  md:w-20 md:h-20 rounded-full z-10"></div>
 
                 {/* Text content with separate background overlay */}
-                <div className="absolute bottom-0  md:w-full p-4 text-center text-white z-10">
+                <div className="absolute bottom-0  w-full p-4 text-center text-white z-10">
                   {/* Background behind the text only */}
                   {/* Background gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-r from-black to-teal-300 opacity-70 z-0 rounded-b-xl" />
