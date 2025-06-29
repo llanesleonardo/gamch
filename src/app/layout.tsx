@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import MainMenu from "@/components/mainMenu";
+import MobileBottomMenu from "@/components/MobileBottomMenu";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -66,6 +67,7 @@ export default function RootLayout({
       >
       <MainMenu />
         {children}
+        <MobileBottomMenu />
       </body>
     </html>
   );
