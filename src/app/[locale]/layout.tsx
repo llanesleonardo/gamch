@@ -23,6 +23,7 @@ export const metadata:Metadata = {
   title: "Yeehaw Event",
   description: "Yeehaw Event Registration",
   keywords: "Yeehaw, Salvation Army, Salvation Army Church, Children event",
+    manifest: "/site.webmanifest",
   authors: [{ name: "Salvation Army", url: "https://thesatemple.com/" }],
   creator: "3L & Valente Diseniador",
   openGraph: {
@@ -60,15 +61,17 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({locale}));
 }
 
-
+// ✅ Correctly typed props
 type Props = {
   children: React.ReactNode;
-  params: { locale: string };
+  params: {
+    locale: string;
+  };
 };
 
 export default async function Layout({ children, params }: Props) {
-  const { locale } = await params;
-
+  const { locale } = params;
+  
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
