@@ -5,10 +5,12 @@ import Image from 'next/image';
 
 
 const cards = [
-  { title: "Lorem ipsum 1", description: "Lorem ipsum dolor sit amet, consectetuer", image: "https://gamch.blob.core.windows.net/gamch/Img/Landing - VBS-18.jpg" },
-  { title: "Lorem ipsum 2", description: "Lorem ipsum dolor sit amet, consectetuer", image: "https://gamch.blob.core.windows.net/gamch/Img/Landing - VBS-18.jpg" },
-  { title: "Lorem ipsum 3", description: "Lorem ipsum dolor sit amet, consectetuer", image: "https://gamch.blob.core.windows.net/gamch/Img/Landing - VBS-18.jpg" },
-  { title: "Lorem ipsum 4", description: "Lorem ipsum dolor sit amet, consectetuer", image: "https://gamch.blob.core.windows.net/gamch/Img/Landing - VBS-18.jpg" },
+  { title: "Musica", description: "", image: "https://gamch.blob.core.windows.net/gamch/activities/1.png" },
+  { title: "Nuevos amigos", description: "", image: "https://gamch.blob.core.windows.net/gamch/activities/2.png" },
+  { title: "Juegos", description: "", image: "https://gamch.blob.core.windows.net/gamch/activities/4.png" },
+  { title: "Manualidades", description: "", image: "https://gamch.blob.core.windows.net/gamch/activities/3.png" },
+    { title: "Premios", description: "", image: "https://gamch.blob.core.windows.net/gamch/activities/5.png" },
+      { title: "Reglos", description: "", image: "https://gamch.blob.core.windows.net/gamch/activities/6.png" },
 ];
 
 const cardWidth = 500;
@@ -98,9 +100,9 @@ export default function Carousel() {
                   <div className="relative z-10">
                     <h2 className="text-xl md:text-3xl font-bold">{card.title}</h2>
                     <p className="text-lg md:text-2xl px-10">{card.description}</p>
-                    <button className="mx-auto mt-2 text-xl md:text-2xl bg-[#b53639] px-4 py-2 rounded-full text-white font-bold hidden md:block">
+                    <a href="#registration" className="mx-auto mt-2 text-xl md:text-2xl bg-[#b53639] px-4 py-2 rounded-full text-white font-bold hidden md:block">
                       Contáctanos
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
