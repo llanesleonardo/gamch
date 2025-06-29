@@ -57,13 +57,43 @@ export default function RegistroForm() {
         }
       );
 
-      const result = await response.json();
+
+      const text = await response.text();
+  let result;
+
+  try {
+    result = JSON.parse(text);
+  } catch (jsonError) {
+    console.error("Invalid JSON response:", text,jsonError);
+    throw new Error("Received an invalid JSON response from the server.");
+  }
+
+  console.log("Azure Response:", result);
+
+  if (!response.ok) {
+    throw new Error(result?.error || "Unknown error from server.");
+  }
+
+  alert("Mensaje enviado con éxito ✅");
+} catch (error) {
+    if (error instanceof Error) {
+    console.error("Error submitting form:", error.message);
+  } else {
+    console.error("Error submitting form:", error);
+  }
+  alert("Error al enviar el formulario ❌");
+}
+
+   /**
+    *    const result = await response.json();
       console.log("Azure Response:", result);
       alert("Mensaje enviado con éxito ✅");
     } catch (error) {
       console.error("Error submitting form:", error);
       alert("Error al enviar el formulario ❌");
     }
+    * 
+    */
   };
 
   return (
