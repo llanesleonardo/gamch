@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import { menuItems } from '@/data/menuItems'
 import Image from 'next/image';
-import { FaHome, FaCalendarAlt, FaRegClipboard } from 'react-icons/fa'
 
 
 export default function MainMenu() {
