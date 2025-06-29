@@ -18,9 +18,29 @@ export default function RegistroForm() {
     message: "",
   });
 
-  // New state for loading and API response
   const [loading, setLoading] = useState(false);
-const [apiResponse, setApiResponse] = useState<ApiResponse | null>(null);
+  const [apiResponse, setApiResponse] = useState<ApiResponse | null>(null);
+  const [validationError, setValidationError] = useState<string | null>(null);
+
+  // Helper for email validation
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  const validateForm = () => {
+    if (!parentInfo.name.trim()) return "El nombre del padre o madre es obligatorio.";
+    if (!parentInfo.email.trim()) return "El correo es obligatorio.";
+    if (!emailRegex.test(parentInfo.email.trim())) return "El correo no es válido.";
+    if (!parentInfo.phone.trim()) return "El teléfono es obligatorio.";
+    if (!parentInfo.address.trim()) return "La dirección es obligatoria.";
+
+    if (children.length === 0) return "Debe agregar al menos un niño.";
+    for (let i = 0; i < children.length; i++) {
+      if (!children[i].name.trim()) return `El nombre del niño ${i + 1} es obligatorio.`;
+      if (!children[i].age.trim()) return `La edad del niño ${i + 1} es obligatoria.`;
+      if (isNaN(Number(children[i].age)) || Number(children[i].age) <= 0)
+        return `La edad del niño ${i + 1} debe ser un número válido mayor que 0.`;
+    }
+    return null;
+  };
 
   const handleAddChild = () => {
     setChildren([...children, { name: "", age: "" }]);
@@ -48,14 +68,22 @@ const [apiResponse, setApiResponse] = useState<ApiResponse | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setApiResponse(null);
+    setValidationError(null);
+
+    // Client-side validation
+    const error = validateForm();
+    if (error) {
+      setValidationError(error);
+      return;
+    }
 
     const payload = {
       parent: parentInfo,
       children,
     };
 
-    setLoading(true); // Start loading
-    setApiResponse(null); // Clear previous response
+    setLoading(true);
 
     try {
       const response = await fetch(
@@ -80,18 +108,17 @@ const [apiResponse, setApiResponse] = useState<ApiResponse | null>(null);
       }
 
       setApiResponse(result);
-      setLoading(false); // Stop loading
+      setLoading(false);
 
       if (!response.ok) {
         throw new Error(result?.error || "Unknown error from server.");
       }
 
-      // Optionally clear the form here if you want:
+      // Optionally clear the form here on success:
       // setParentInfo({ name: "", email: "", phone: "", address: "", message: "" });
       // setChildren([{ name: "", age: "" }]);
-
     } catch (error) {
-      setLoading(false); // Stop loading
+      setLoading(false);
       if (error instanceof Error) {
         setApiResponse({ error: error.message });
         console.error("Error submitting form:", error.message);
@@ -106,11 +133,17 @@ const [apiResponse, setApiResponse] = useState<ApiResponse | null>(null);
     <section className="bg-[#fffbf3] px-6 py-10" id="registration">
       <h2 className="text-2xl font-semibold mb-6 text-center">Registro</h2>
 
+      {/* Validation error display */}
+      {validationError && (
+        <div className="max-w-5xl mx-auto mb-4 p-4 rounded shadow text-center font-semibold bg-red-100 text-red-700">
+          {validationError}
+        </div>
+      )}
+
       {/* Show loader if loading, otherwise show form */}
       {loading ? (
         <div className="flex justify-center items-center py-10">
-          <span className="text-lg font-semibold">Enviando la informacion...</span>
-          {/* You can replace with a spinner component if you like */}
+          <span className="text-lg font-semibold">Enviando la información...</span>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="max-w-5xl mx-auto space-y-8">
@@ -163,7 +196,6 @@ const [apiResponse, setApiResponse] = useState<ApiResponse | null>(null);
               <h3 className="text-xl font-semibold">
                 Información del Niño o Niños
               </h3>
-
               {children.map((child, index) => (
                 <div key={index} className="rounded relative">
                   <div className="flex justify-between items-start gap-4">
@@ -200,7 +232,6 @@ const [apiResponse, setApiResponse] = useState<ApiResponse | null>(null);
                   </div>
                 </div>
               ))}
-
               <button
                 type="button"
                 onClick={handleAddChild}
@@ -224,13 +255,13 @@ const [apiResponse, setApiResponse] = useState<ApiResponse | null>(null);
       )}
 
       {/* Show API response below the form when not loading and response exists */}
-    {!loading && apiResponse && (
-      <div className={`max-w-5xl mx-auto mt-8 p-4 rounded shadow text-center font-semibold ${
-        apiResponse.error ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'
-      }`}>
-        {apiResponse.error || apiResponse.message}
-      </div>
-    )}
+      {!loading && apiResponse && (
+        <div className={`max-w-5xl mx-auto mt-8 p-4 rounded shadow text-center font-semibold ${
+          apiResponse.error ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'
+        }`}>
+          {apiResponse.error || apiResponse.message}
+        </div>
+      )}
 
       {/* Contact Info */}
       <div className="flex flex-col md:flex-row justify-center items-center mt-20 gap-5 md:gap-20">

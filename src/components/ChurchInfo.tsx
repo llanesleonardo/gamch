@@ -27,7 +27,7 @@ export default function ChurchInfo() {
               <p className="text-3xl md:text-4xl">6:30PM-8:30PM</p>
             </div>
         </div>
-        <div>
+        <div className='flex flex-col md:flex-row  items-center md:items-end justify-around '>
           <div className="text-5xl flex flex-col md:flex-row items-center md:items-end justify-around font-bold">
             <Image src={"https://gamch.blob.core.windows.net/gamch/iconos/Landing - VBS-03.png"} 
             alt="Gamch Logo" 
