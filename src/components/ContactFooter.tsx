@@ -4,7 +4,7 @@ export default function Contact() {
   return (
     <section className="bg-white px-6 py-10">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-5 md:gap-30">
-        <div className="flex flex-row items-start justify-center gap-5">
+        <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-5">
           <div className="flex flex-row items-center justify-center gap-5">
             <Image
               src={
@@ -22,7 +22,7 @@ export default function Contact() {
             </p>
           </div>
         </div>
-        <div className="flex flex-row items-start justify-center gap-5">
+        <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-5">
           <div className="flex flex-row items-center justify-center gap-5">
             <Image
               src={
@@ -41,7 +41,7 @@ export default function Contact() {
       </div>
 
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-10 md:gap-30 mt-10">
-        <div className="flex flex-row items-start justify-center gap-5">
+        <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-5">
           <div className="flex flex-row items-center justify-center gap-5">
             <Image
               src={

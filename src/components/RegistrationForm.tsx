@@ -234,7 +234,7 @@ const [apiResponse, setApiResponse] = useState<ApiResponse | null>(null);
 
       {/* Contact Info */}
       <div className="flex flex-col md:flex-row justify-center items-center mt-20 gap-5 md:gap-20">
-        <div className="flex flex-row items-start justify-center gap-5">
+        <div className="flex flex-col  md:flex-row items-center md:items-start justify-center gap-5">
           <Image
             src="https://gamch.blob.core.windows.net/gamch/iconos/Landing - VBS-10.png"
             alt="Phone number"
@@ -245,7 +245,7 @@ const [apiResponse, setApiResponse] = useState<ApiResponse | null>(null);
             <p className="textl-lg md:text-2xl">(714) 227-5173</p>
           </div>
         </div>
-        <div className="flex flex-row items-start justify-center gap-5">
+        <div className="flex flex-col  md:flex-row items-center md:items-start justify-center gap-5">
           <Image
             src="https://gamch.blob.core.windows.net/gamch/iconos/Landing - VBS-11.png"
             alt="Email"

@@ -5,16 +5,16 @@ export default function Contact() {
   return (
     <section className="bg-white px-6 py-10" id="contact">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-evenly gap-10">
-        <div className="flex flex-col items-start justify-center gap-10">
+        <div className="flex flex-col items-center md:items-start justify-center gap-10">
           <h3 className="text-3xl md:text-5xl text-[#b53639] font-bold text-center md:text-left">Lorem ipsum</h3>
-          <p className="text-[#b53639] text-lg md:text-2xl font-bold ">
+          <p className="text-[#b53639] text-lg md:text-2xl font-bold text-center md:text-left">
             Lorem ipsum dolor sit amet,
             <br />
             consectetuer adipiscing
           </p>
         </div>
-        <div className="flex flex-col md:flex-col items-start justify-center gap-5">
-          <div className="flex flex-row items-start justify-center gap-5">
+        <div className="flex flex-col  items-center  md:items-start justify-center gap-5">
+          <div className="flex flex-col  md:flex-row items-center md:items-start justify-center gap-5">
             <div>
               <Image
                 src={
@@ -30,7 +30,7 @@ export default function Contact() {
               <p className="text-lg md:text-2xl text-[#b53639]">(520)247-2460</p>
             </div>
           </div>
-          <div className="flex flex-row items-start justify-center gap-5">
+          <div className="flex flex-col  md:flex-row items-center md:items-start justify-center gap-5">
             <div>
               <Image
                 src={
@@ -46,7 +46,7 @@ export default function Contact() {
               <p className="text-lg md:text-2xl text-[#b53639]">(714) 227-5173</p>
             </div>
           </div>
-          <div className="flex flex-row items-start justify-center gap-5">
+          <div className="flex flex-col  md:flex-row items-center md:items-start justify-center gap-5">
             <div>
               <Image
                 src={

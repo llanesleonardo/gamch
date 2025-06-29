@@ -10,7 +10,7 @@ const cards = [
   { title: "Juegos", description: "", image: "https://gamch.blob.core.windows.net/gamch/activities/4.png" },
   { title: "Manualidades", description: "", image: "https://gamch.blob.core.windows.net/gamch/activities/3.png" },
     { title: "Premios", description: "", image: "https://gamch.blob.core.windows.net/gamch/activities/5.png" },
-      { title: "Reglos", description: "", image: "https://gamch.blob.core.windows.net/gamch/activities/6.png" },
+      { title: "Regalos", description: "", image: "https://gamch.blob.core.windows.net/gamch/activities/6.png" },
 ];
 
 const cardWidth = 500;

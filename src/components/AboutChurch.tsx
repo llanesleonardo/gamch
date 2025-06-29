@@ -4,8 +4,8 @@ import { FaWhatsapp } from 'react-icons/fa';
 
 export default function AboutChurch() {
   return (
-    <section className="bg-white px-6 py-10" id='aboutus'>
-      <div className="bg-white max-w-7xl mx-auto  px-6 py-10 flex flex-col items-center justify-center gap-10">
+    <section className="bg-white px-1 md:px-6 py-10" id='aboutus'>
+      <div className="bg-white max-w-7xl mx-auto  px-1 md:px-6 py-10 flex flex-col items-center justify-center gap-10">
         <div className="flex flex-row items-start justify-center gap-5">
           <Image
             src={

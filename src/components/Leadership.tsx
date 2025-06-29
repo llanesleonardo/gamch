@@ -89,7 +89,7 @@ export default function Leadership() {
             />
           </div>
         </div>
-        <div className="flex flex-row justify-center items-center gap-20">
+        <div className="flex flex-row justify-center items-center gap-20 border-b-1 md:border-b-4 border-white pb-8 mb-8">
           <div>
             <Image
               src={
