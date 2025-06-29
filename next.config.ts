@@ -1,11 +1,13 @@
-import type { NextConfig } from "next";
+import { NextConfig } from 'next';
+import createNextIntlPlugin from 'next-intl/plugin'; // Import the plugin
+
+const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
-  /* config options here */
   output: 'export',
-    images: {
+  images: {
     unoptimized: true,
   },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig); // Wrap and export the config

@@ -1,3 +1,4 @@
+import {use} from 'react';
 import Hero from '@/components/Hero'
 import EventDescription from '@/components/EventDescription'
 import ChurchInfo from '@/components/ChurchInfo'
@@ -11,11 +12,27 @@ import AboutChurch from '@/components/AboutChurch'
 import ChurchHero from '@/components/ChurchHero'
 import ContactFooter from '@/components/ContactFooter'
 import Footer from '@/components/Footer'
+import { useTranslations } from 'next-intl';
+import {setRequestLocale} from 'next-intl/server';
+type LocaleParams = {
+  params: {
+    locale: string;
+  };
+};
 
-export default function Home() {
+export default function Home({ params }: LocaleParams) {
+  const {locale} = use(params);
+
+  setRequestLocale(locale);
+
+  const t = useTranslations('Home');
+
+
   return (
     <main className="bg-white text-gray-800">
+      
       <Hero />
+      <h1>{t('title')}</h1>
       <EventDescription />
       <ChurchInfo />
       <ChurchLocation />
