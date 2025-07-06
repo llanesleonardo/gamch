@@ -107,7 +107,7 @@ export default function Leadership() {
           <div>
             <Image
               src={
-                "https://gamch.blob.core.windows.net/gamch/Img/Landing - VBS-20.png"
+                "https://gamch.blob.core.windows.net/gamch/team/p3v1.png"
               }
               alt="Leadership Member 1"
               className="rounded-full mx-auto mb-4"
@@ -121,7 +121,7 @@ export default function Leadership() {
            <div>
             <Image
               src={
-                "https://gamch.blob.core.windows.net/gamch/Img/Landing - VBS-20.png"
+                "https://gamch.blob.core.windows.net/gamch/team/p3v1.png"
               }
               alt="Leadership Member 1"
               className="rounded-full mx-auto mb-4"
